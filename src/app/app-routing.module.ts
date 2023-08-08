@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { RegistrationComponent } from './auth/registration/registration.component';
+import { LoginComponent } from './auth/login/login.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'main', component: MainPageComponent },
+  { path: 'country/:countryCode', component: CountryDetailComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '**', redirectTo: '/main', pathMatch: 'full' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

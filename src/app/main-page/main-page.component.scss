@@ -1,0 +1,54 @@
+.main-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  
+    .background-image {
+      height: 50%; 
+      background: url('/../countries-list.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .transparent-header {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2; 
+        
+      .spacer {
+        flex: 1 1 auto;
+      }
+      .user-name{
+        color: white;
+      }
+    
+    }
+  
+    .search-filter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      height: 66.67%; 
+      padding: 20px;
+  
+      app-search-bar {
+        flex: 1;
+        margin-right: 10px;
+      }
+  
+      app-filter-button {
+        margin-left: 10px;
+      }
+    }
+  
+    app-country-list {
+      background: white;
+      padding: 20px;
+    }
+  }
+  

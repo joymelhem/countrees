@@ -39,12 +39,11 @@
     }
   
     .search-filter {
-      /* Styles for the search bar section ... */
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
-      position: relative; /* Required for absolute positioning of search bar */
+      position: relative;
     }
   
     .search-bar-wrapper {

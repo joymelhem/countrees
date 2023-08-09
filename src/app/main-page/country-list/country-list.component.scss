@@ -8,7 +8,6 @@
     padding: 20px;
 
     @media (max-width: 1024px) {
-        /* 2 columns for screens up to 1024px */
         grid-template-columns: repeat(2, 1fr);
     }
     

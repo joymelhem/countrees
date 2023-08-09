@@ -1,16 +1,20 @@
-<div class="main-page">
+  <div class="main-page">
     <div class="background-image"></div>
     <mat-toolbar class="transparent-header">
-        <img class="logo" src="/assets/logo_white.png" alt="logo_white">
-          <span class="spacer"></span>
-          <span class="user-name">Hi, John</span>
-          <mat-icon class="user-logo">account_circle</mat-icon>
+      <img class="logo" src="/assets/logo_white.png" alt="logo_white">
+      <span class="spacer"></span>
+      <span class="user-name">Hi, John</span>
+      <mat-icon class="user-logo">account_circle</mat-icon>
     </mat-toolbar>
-    
+  
     <div class="search-filter">
-      <app-search></app-search>
-      <app-filter-by-region></app-filter-by-region>
+      <div class="search-bar-wrapper">
+        <div class="search"><app-search></app-search></div>
+      </div>
     </div>
-    <app-country-list></app-country-list>
+    
+    <div class="white-space">
+      <app-country-list></app-country-list>
+    </div>
   </div>
   

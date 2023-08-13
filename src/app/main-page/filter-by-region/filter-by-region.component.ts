@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-by-region.component.scss']
 })
 export class FilterByRegionComponent {
+  showFilter: boolean = false;
 
+  toggleFilter(): void {
+    this.showFilter = !this.showFilter;
+  }
 }

@@ -1,1 +1,27 @@
-<p>country-detail works!</p>
+<div class="container">
+    <mat-toolbar class="transparent-header">
+        <img class="logo" src="/assets/logo_blue.png" alt="logo_white">
+        <span class="spacer"></span>
+        <span class="user-name">Hi, John</span>
+        <mat-icon class="user-logo">account_circle</mat-icon>
+    </mat-toolbar>
+    <div class="page-indicator">Details Page</div>
+    <div class="page-content">
+        <div class="left">
+            <div class="l1">
+                <img src="https://www.countryflags.com/wp-content/uploads/united-kingdom-flag-png-large.png" alt="Flag">
+            </div>
+            <div class="l2">
+                <app-image-gallery></app-image-gallery>
+            </div>
+        </div>
+        <div class="right">
+            <div class="r1">
+                <app-country-info></app-country-info>
+            </div>
+            <div class="r2">
+                <app-border-countries></app-border-countries>
+            </div>
+        </div>
+    </div>
+</div>

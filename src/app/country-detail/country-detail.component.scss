@@ -1,0 +1,75 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    .transparent-header {
+        background-color: transparent;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        padding-left:35px; 
+        padding-right: 35px;
+    
+        .logo{
+        width: 100px;
+        }
+        
+        .spacer {
+        flex: 1 1 auto;
+        }
+        .user-name{
+        color: black;
+        margin-right: 15px;
+        }
+        .user-logo{
+        color:black
+        }
+    }
+
+    .page-indicator{
+        border-top: 1px solid rgba(200, 200, 200, 0.2);
+        border-bottom: 1px solid rgb(200, 200, 200, 0.2);
+        font-size: 12px;
+        padding: 10px 15px 10px 40px;
+    }
+    .page-content{
+        display: flex;
+        flex-direction: row;
+
+        .left{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            width: 50%;
+            .l1{
+                display: flex;
+                align-content: center;
+                justify-content: center;
+            }
+            app-image-gallery{
+                display: flex;
+                align-content: center;
+                justify-content: center;
+            }
+        }
+        .right{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            width: 50%;
+            .r1{
+                align-self: center;
+            }
+            .r2{
+                align-self: center
+            }
+        }
+    }
+}
+img{
+    width:80%;
+    height: 200px;
+    object-fit: contain;
+}

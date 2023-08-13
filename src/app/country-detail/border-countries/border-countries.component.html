@@ -1,1 +1,9 @@
-<p>border-countries works!</p>
+<div class="border-countries">
+    <h3>Border Countries:</h3>
+    <ul>
+      <li *ngFor="let borderCountry of borderCountries">
+        <a [routerLink]="['/country', borderCountry.name]">{{ borderCountry.name }}</a>
+      </li>
+    </ul>
+  </div>
+  

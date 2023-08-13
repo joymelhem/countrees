@@ -1,8 +1,9 @@
 .main-page {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
+    background-color: whitesmoke;
   
     .background-image {
       height: 33.3%; 
@@ -22,7 +23,7 @@
       padding-right: 35px;
 
       .logo{
-        width: 90px;
+        width: 100px;
       }
         
       .spacer {
@@ -37,32 +38,25 @@
       }
     
     }
-  
-    .search-filter {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      position: relative;
-    }
-  
-    .search-bar-wrapper {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-      position: absolute;
-      margin-bottom: 15px;
-      .search{
+
+      .search-bar-wrapper {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 28.5%;
+
+        .search{
+          padding-right: 9%;
+        }
+        .filter{
+        }
       }
-      .filter{
-        align-items: flex-end;
-      }
-    }
+
   
-    .white-space {
-      background: white;
-      padding: 20px;
-    }
+ 
+  
   }
   

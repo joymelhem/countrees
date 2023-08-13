@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-border-countries',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./border-countries.component.scss']
 })
 export class BorderCountriesComponent {
-
+  @Input() borderCountries!: { name: string }[];
 }

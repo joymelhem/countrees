@@ -23,6 +23,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { LightboxComponent } from './lightbox/lightbox.component'
 import { HttpClientModule } from '@angular/common/http';
+import { authenticationGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,12 @@ import { HttpClientModule } from '@angular/common/http';
     MatDialogModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'CanActivateFn',
+      useFactory: authenticationGuard
+    }
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

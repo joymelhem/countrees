@@ -1,4 +1,9 @@
 .main-page {
+  @media (max-width: 720px) {
+    .filter{
+      visibility: hidden;
+    };
+}
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -39,24 +44,28 @@
     
     }
 
-      .search-bar-wrapper {
-        display: flex;
-        width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        top: 28.5%;
+  .search-bar-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 29.5%;
 
-        .search{
-          padding-right: 9%;
-        }
-        .filter{
-        }
-      }
-
-  
- 
-  
+    .search{
+      padding-right: 9%;
+    }
+    .filter{
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      justify-content: right;
+      align-items: right;
+      position: absolute;
+      top: 1px;
+      margin-right: 5%;
+    }
   }
+}
   

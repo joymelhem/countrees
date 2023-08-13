@@ -1,51 +1,47 @@
 <body>
     <div class="container">
-        <div class="login-content">
-
-            <img class="logo" src="/assets/logo_blue.png" alt="logo_blue">
-            <div class="login">Create new account</div>
-            <div class="signup">
-                Already a member? <a href="login">Log in</a>
-            </div>            
-            <form>
-                <div class="dense-1">
-                <div class="input-row">
-                    <mat-form-field appearance="outline" class="row-field">
-                      <mat-label>First Name</mat-label>
-                      <input matInput placeholder="First Name" >
-                    </mat-form-field>
-            
-                    <mat-form-field appearance="outline" class="row-field">
-                      <mat-label>Last Name</mat-label>
-                      <input matInput placeholder="Last Name" >
-                    </mat-form-field>
-                  </div>
-
-                <mat-form-field appearance="outline" class="custom-field">
-                    <mat-label>Email</mat-label>
-                    <input type="email" matInput class="email" placeholder="Ex. john.doe@example.com">
-                </mat-form-field>
-                
-                <mat-form-field appearance="outline" class="custom-field">
-                    <mat-label>Password</mat-label>
-                  <input matInput class="password" placeholder="Password" type="password">
-                </mat-form-field>
-                <div class="checkbox-row">
-                    <mat-checkbox class="admin-checkbox">Create <b>Admin</b> Account</mat-checkbox>
-                </div>
-                  
-                <div class="checkbox-row">
-                    <mat-checkbox class="terms-checkbox">I agree to the <b>terms and conditions</b> as set out by the user agreement.<br>
-                    <span class="terms-blue">
-                        By clicking here, I state that I have read and understood the terms and conditions
-                    </span>
-                </mat-checkbox>
-                </div>
-            </div>
-
-                <button mat-raised-button color="primary">Sign up</button>
-            </form>
+      <div class="login-content">
+        <img class="logo" src="/assets/logo_blue.png" alt="logo_blue">
+        <div class="login">Create new account</div>
+        <div class="signup">
+          Already a member? <a href="login">Log in</a>
         </div>
-        <div class="background-image"></div>
+        <form [formGroup]="registrationForm" (ngSubmit)="register()">
+          <div class="dense-1">
+            <div class="input-row">
+              <mat-form-field appearance="outline" class="row-field">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="First Name">
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="row-field">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName" placeholder="Last Name">
+              </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="Ex. john.doe@example.com">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="custom-field">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" placeholder="Password" type="password">
+            </mat-form-field>
+            <div class="checkbox-row">
+              <mat-checkbox color="primary" class="admin-checkbox" formControlName="isAdmin">Create <b>Admin</b> Account</mat-checkbox>
+            </div>
+            <div class="checkbox-row">
+              <mat-checkbox color="primary" class="terms-checkbox" formControlName="agreeToTerms">
+                I agree to the <b>terms and conditions</b> as set out by the user agreement.<br>
+                <span class="terms-blue">
+                  By clicking here, I state that I have read and understood the terms and conditions
+                </span>
+              </mat-checkbox>
+            </div>
+          </div>
+          <button mat-raised-button color="primary" type="submit">Sign up</button>
+        </form>
       </div>
-</body>
+      <div class="background-image"></div>
+    </div>
+  </body>
+  

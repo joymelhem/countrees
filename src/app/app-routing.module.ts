@@ -4,14 +4,15 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { LoginComponent } from './auth/login/login.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { authenticationGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'main', component: MainPageComponent },
-  { path: 'country/:countryCode', component: CountryDetailComponent },
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
-  { path: '**', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'main', component: MainPageComponent, canActivate:['CanActivateFn'] },
+  { path: 'country/:countryCode', component: CountryDetailComponent, canActivate:['CanActivateFn'] },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({

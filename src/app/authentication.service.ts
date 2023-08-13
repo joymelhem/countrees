@@ -11,11 +11,19 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
   register(user: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/User_SignUp`, user);
+    return this.http.post(`${this.apiUrl}/SignUp()`, user);
   }
 
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/Login()`, credentials);
   }
 
+  hasAccess(): boolean {
+    const token = localStorage.getItem('token');
+    if (token) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

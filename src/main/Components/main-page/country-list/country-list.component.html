@@ -1,5 +1,6 @@
-<div class="country-list">
-    <div class="country-card" *ngFor="let country of countries">
+<div class="country-list-container">
+  <div class="country-list">
+    <div class="country-card" *ngFor="let country of countries" (click)="navigateToCountryDetails(country.name)">
       <img [src]="country.flag" alt="Country Flag">
       <div class="country-info">
         <h3>{{ country.name }}</h3>
@@ -7,4 +8,4 @@
       </div>
     </div>
   </div>
-  
+</div>

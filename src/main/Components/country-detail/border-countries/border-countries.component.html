@@ -1,7 +1,8 @@
 <div class="border-countries">
-    <h3>Border Countries:</h3>
-    <ul>
-
-    </ul>
-  </div>
-  
+  <h3>Border Countries:</h3>
+  <ul>
+      <li *ngFor="let borderCountry of borderCountries">
+          <a [routerLink]="['/country-details', borderCountry.name]">{{ borderCountry.name }}</a>
+      </li>
+  </ul>
+</div>

@@ -25,7 +25,7 @@ import { MainRoutingModule } from './main-routing.module';
     CountryDetailComponent,
     CountryListComponent,
     SearchComponent,
-    FilterByRegionComponent
+    FilterByRegionComponent,
   ],
   imports: [
     CommonModule,

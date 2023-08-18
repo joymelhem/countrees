@@ -1,11 +1,12 @@
-<form>
+<!-- <form (submit)="onSearch(searchInput.value)"> -->
     <div class="dense-1">
-    <mat-form-field class="search-field" appearance="fill" >
+      <mat-form-field class="search-field" appearance="fill">
         <mat-label>Country</mat-label>
-        <input matInput type="text" placeholder="Search for a country">
-        <mat-button matSuffix mat-icon-button class="icon">
-            <mat-icon >search</mat-icon>
-        </mat-button>
-    </mat-form-field>
+        <input (keydown)="onSearch(searchInput.value)" matInput type="text" placeholder="Search for a country" #searchInput>
+        <button matSuffix mat-icon-button (click)="onSearch(searchInput.value)" class="icon">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
-</form>
+  <!-- </form> -->
+  

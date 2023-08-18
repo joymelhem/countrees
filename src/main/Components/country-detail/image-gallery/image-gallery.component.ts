@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-image-gallery',
@@ -7,7 +6,6 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./image-gallery.component.scss']
 })
 export class ImageGalleryComponent {
-  @Input() images!: { url: string }[];
+  @Input() images: { url: string }[] = [];
   currentIndex: number = 0;
-  constructor(private dialog: MatDialog) {}
 }

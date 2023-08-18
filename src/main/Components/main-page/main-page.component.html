@@ -8,9 +8,13 @@
   </mat-toolbar>
 
   <div class="search-bar-wrapper">
-    <div class="search"><app-search></app-search></div>
-    <div class="filter"><app-filter-by-region></app-filter-by-region></div>
+    <div class="search">
+      <app-search (searchCountry)="onSearch($event)"></app-search>
+    </div>
+    <div class="filter">
+      <app-filter-by-region></app-filter-by-region>
+    </div>
   </div>
 
-  <app-country-list></app-country-list>
+  <app-country-list [countries]="filteredCountries"></app-country-list>
 </div>

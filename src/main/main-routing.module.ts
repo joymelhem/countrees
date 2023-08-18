@@ -5,7 +5,7 @@ import { CountryDetailComponent } from './Components/country-detail/country-deta
 
 const routes: Routes = [
   { path: '', component: MainPageComponent,  canActivate:['CanActivateFn'] },
-  { path: 'country/:countryCode', component: CountryDetailComponent, canActivate:['CanActivateFn'] }
+  { path: 'country/:name', component: CountryDetailComponent, canActivate:['CanActivateFn'] }
 ];
 
 @NgModule({

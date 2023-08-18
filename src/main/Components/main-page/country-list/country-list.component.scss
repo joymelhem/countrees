@@ -1,4 +1,8 @@
-.country-list {
+.country-list-container {
+  max-height: 400px; 
+  overflow-y: auto; 
+
+  .country-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px; 
@@ -9,41 +13,44 @@
     margin-top: 20px;
 
     @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
-    
+    @media (max-width: 670px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
     .country-card {
       background-color: white;
       border-radius: 5px;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
       display: flex;
       padding: 10px;
       cursor: pointer;
       transition: transform 0.2s;
-      width:300px;
-  
+      width: 300px;
+      height: 50px;
+
       &:hover {
         transform: translateY(-5px);
       }
-  
+
       img {
         max-width: 80px; 
         height: auto;
-        border-radius: 5px 0 0 5px;
+        border-radius: 5px;
         margin-right: 10px;
       }
-  
+
       .country-info {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-  
+
         h3 {
           margin: 0;
           font-size: 14px;
           font-weight: bold;
         }
-  
+
         p {
           margin: 5px 0;
           font-size: 12px;
@@ -52,4 +59,4 @@
       }
     }
   }
-  
+}

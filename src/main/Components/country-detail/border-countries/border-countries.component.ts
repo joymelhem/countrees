@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common'; 
+import { country } from 'src/app/country';
 
 @Component({
   selector: 'app-border-countries',
@@ -7,11 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./border-countries.component.scss']
 })
 export class BorderCountriesComponent {
-  @Input() borderCountries: { name: string }[] = [];
+  @Input() borderCountries: country[] = [];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private location: Location) {}
 
-  navigateToCountry(countryName: string): void {
-    this.router.navigate(['/country-details', countryName]);
+  navigateToCountryDetails(countryName: string): void {
+    this.router.navigate(['/main/country', countryName]).then(() => {
+      this.location.go(this.router.url);
+    });
   }
 }

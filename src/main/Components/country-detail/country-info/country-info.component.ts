@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { country } from 'src/app/country';
 
 @Component({
   selector: 'app-country-info',
@@ -6,13 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./country-info.component.scss']
 })
 export class CountryInfoComponent {
-  @Input() countryName: string = '';
-  @Input() capital: string = '';
-  @Input() population: number = 0;
-  @Input() officialLanguage: string = '';
-  @Input() government: string = '';
-  @Input() majorCities: string = '';
-  @Input() economy: string = '';
-  @Input() historyCulture: string = '';
+  @Input() country: country | undefined;
   @Input() isAdmin: boolean = false;
 }

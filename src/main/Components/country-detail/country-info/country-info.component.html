@@ -1,11 +1,9 @@
 <div class="country-details">
-  <h2>{{ countryName }}</h2>
-  <p>Capital: {{ capital }}</p>
-  <p>Population: {{ population }}</p>
-  <p>Official Language: {{ officialLanguage }}</p>
-  <p>Government: {{ government }}</p>
-  <p>Major Cities: {{ majorCities }}</p>
-  <p>Economy: {{ economy }}</p>
-  <p>History and Culture: {{ historyCulture }}</p>
+  <h1>{{ country?.name }}</h1>
+  <p><b>Region: </b>{{ country?.continent}}</p>
+  <p><b>Capital: </b>{{ country?.capital }}</p>
+  <p><b>Population: </b>{{ country?.population }}</p>
+  <p><b>Official Language: </b>{{ country?.language }}</p>
+  <p><b>Currency: </b>{{ country?.currency }} ({{ country?.currencySymbol }})</p>
   <button *ngIf="isAdmin" mat-button>Edit</button>
 </div>

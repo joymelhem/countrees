@@ -1,8 +1,7 @@
 <div class="border-countries">
   <h3>Border Countries:</h3>
-  <ul>
-      <li *ngFor="let borderCountry of borderCountries">
-          <a [routerLink]="['/country-details', borderCountry.name]">{{ borderCountry.name }}</a>
-      </li>
-  </ul>
+  <div class="border-country-card" *ngFor="let borderCountry of borderCountries">
+    <img [src]="borderCountry.flag" alt="Country Flag" (click)="navigateToCountryDetails(borderCountry.name)">
+    <p>{{ borderCountry.name }}</p>
+  </div>
 </div>

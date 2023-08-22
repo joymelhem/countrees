@@ -6,6 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./image-gallery.component.scss']
 })
 export class ImageGalleryComponent {
-  @Input() images: { url: string }[] = [];
-  currentIndex: number = 0;
+  @Input() countryImage: string | undefined;
 }

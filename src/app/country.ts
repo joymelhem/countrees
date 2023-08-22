@@ -9,4 +9,5 @@ export interface country {
   language?: string;
   images?: string[];
   borderCountries?: string[];
+  image?: string; 
 }

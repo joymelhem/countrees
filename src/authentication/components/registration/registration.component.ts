@@ -37,16 +37,18 @@ export class RegistrationComponent implements OnInit {
         Password: this.registrationForm.value.password,
         RoleName: this.registrationForm.value.isAdmin ? 'Admin' : 'User'
       };
-      
-      this.authService.register(userData).subscribe(
-        response => {
+  
+      const isAdmin = this.registrationForm.value.isAdmin;
+  
+      this.authService.register(userData, isAdmin).subscribe({
+        next: response => {
           console.log('Registration success:', response);
           this.router.navigate(['/login']);
         },
-        error => {
+        error: error => {
           console.log('Registration error:', error);
         }
-      );
+      });
     }
   }
 }

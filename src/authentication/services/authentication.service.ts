@@ -10,8 +10,9 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) {}
 
-  register(user: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/SignUp()`, user);
+  register(user: any, isAdmin: boolean): Observable<any> {
+    const endpoint = isAdmin ? 'CreateAdminUser()' : 'SignUp()';
+    return this.http.post(`${this.apiUrl}/${endpoint}`, user);
   }
 
   login(credentials: any): Observable<any> {
@@ -20,10 +21,6 @@ export class AuthenticationService {
 
   hasAccess(): boolean {
     const token = localStorage.getItem('token');
-    if (token) {
-      return true;
-    } else {
-      return false;
-    }
+    return !!token;
   }
 }

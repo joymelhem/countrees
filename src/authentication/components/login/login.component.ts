@@ -27,18 +27,18 @@ export class LoginComponent implements OnInit {
   login(): void {
     if (this.loginForm.valid) {
       const credentials = this.loginForm.value;
-      this.authService.login(credentials).subscribe(
-        response => {
+      this.authService.login(credentials).subscribe({
+        next: response => {
           if (response.Login.AccessToken) {
             localStorage.setItem('token', response.Login.AccessToken);
             this.router.navigate(['/main']);
             console.log('Login successful');
           }
         },
-        error => {
+        error: error => {
           console.log('Login failed', error);
         }
-      );
+      });
     }
-  }
+  }  
 }

@@ -15,6 +15,7 @@ import { BorderCountriesComponent } from './Components/country-detail/border-cou
 import { CountryInfoComponent } from './Components/country-detail/country-info/country-info.component';
 import { ImageGalleryComponent } from './Components/country-detail/image-gallery/image-gallery.component';
 import { MainRoutingModule } from './main-routing.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { MainRoutingModule } from './main-routing.module';
     MatToolbarModule,
     MatCheckboxModule,
     MatIconModule,
-    MainRoutingModule
+    MainRoutingModule,
+    FormsModule
   ]
 })
 export class MainModule { }

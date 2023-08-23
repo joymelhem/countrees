@@ -12,9 +12,9 @@
       <app-search (searchCountry)="onSearch($event)"></app-search>
     </div>
     <div class="filter">
-      <app-filter-by-region></app-filter-by-region>
+      <app-filter-by-region (filterByContinent)="onFilterByContinent($event)"></app-filter-by-region>
     </div>
   </div>
 
-  <app-country-list [countries]="filteredCountries"></app-country-list>
+  <app-country-list [filteredCountries]="filteredCountries"></app-country-list>
 </div>

@@ -1,24 +1,35 @@
 .filter-button {
-    color: white;
+  color: white;
+  z-index: 1;
+}
+
+.filter-dropdown {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  top: 65%;
+  right: 10px;
+  width: 200px;
+  border-radius: 20px;
+  z-index: 0;
+
+  .filter-text{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    padding:10px;
+    color: rgb(21, 56, 151);
   }
-  
-  .filter-dropdown {
-    position: absolute;
-    background-color: white;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    top: 100%;
-    right: 20px;
-    width: 200px;
-    display: none;
-  
-    .filter-checkbox {
-      margin-bottom: 10px;
-    }
-  
-    .apply-button {
-      display: block;
-      margin-top: 10px;
-    }
-  }
-  
+}
+
+.filter-checkbox {
+  margin-bottom: 10px;
+}
+
+.apply-button {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 50px;
+  margin-bottom: 5px;
+}

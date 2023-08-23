@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { country } from 'src/app/country';
 
@@ -7,12 +7,14 @@ import { country } from 'src/app/country';
   templateUrl: './country-list.component.html',
   styleUrls: ['./country-list.component.scss']
 })
-export class CountryListComponent {
-  @Input() countries: country[] = [];
+export class CountryListComponent implements OnInit {
+  @Input() filteredCountries: country[] = []; 
 
   constructor(private router: Router) {}
 
+  ngOnInit(): void {}
+
   navigateToCountryDetails(countryName: string): void {
-    this.router.navigate(['/main/country', countryName]); 
+    this.router.navigate(['/main/country', countryName]);
   }
 }

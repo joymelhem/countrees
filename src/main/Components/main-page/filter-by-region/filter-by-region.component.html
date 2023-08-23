@@ -1,13 +1,12 @@
 <button mat-mini-fab color="primary" class="filter-button" (click)="toggleFilter()">
-    <mat-icon>filter_list</mat-icon>
-  </button>
-  <div class="filter-dropdown" *ngIf="showFilter">
-    <div class="filter-checkbox">
-      <mat-checkbox>Continent 1</mat-checkbox>
-    </div>
-    <div class="filter-checkbox">
-      <mat-checkbox>Continent 2</mat-checkbox>
-    </div>
-    <button mat-raised-button class="apply-button">Apply</button>
+  <mat-icon>filter_list</mat-icon>
+</button>
+<div class="filter-dropdown" *ngIf="showFilter">
+  <div class="filter-text">
+    Filter by region
+  </div>
+  <div class="filter-checkbox" *ngFor="let continent of continents">
+    <mat-checkbox color="primary" [(ngModel)]="continent.checked">{{ continent.name }}</mat-checkbox>
+  </div>
+  <button color="primary" mat-raised-button class="apply-button" (click)="applyFilters()">Apply</button>
 </div>
-  

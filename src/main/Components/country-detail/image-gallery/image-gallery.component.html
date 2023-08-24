@@ -1,4 +1,9 @@
 <div class="image-gallery">
   <div class="main-image">
+    <img *ngIf="imageUrl" [src]="imageUrl" alt="Country Image">
+  </div>
+  <div class="upload-form" *ngIf="isAdmin">
+    <input type="file" (change)="onFileSelected($event)" placeholder="Upload">
+    <button mat-raised-button color="primary" (click)="uploadImage()">Upload Image</button>
   </div>
 </div>

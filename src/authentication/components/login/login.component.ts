@@ -29,8 +29,11 @@ export class LoginComponent implements OnInit {
       const credentials = this.loginForm.value;
       this.authService.login(credentials).subscribe({
         next: response => {
-          if (response.Login.AccessToken) {
-            localStorage.setItem('token', response.Login.AccessToken);
+          if (response.Login.AccessToken && response.Login.RefreshToken) {
+            this.authService.setTokens({
+              accessToken: response.Login.AccessToken,
+              refreshToken: response.Login.RefreshToken
+            });
             this.router.navigate(['/main']);
             console.log('Login successful');
           }
@@ -40,5 +43,5 @@ export class LoginComponent implements OnInit {
         }
       });
     }
-  }  
+  }
 }

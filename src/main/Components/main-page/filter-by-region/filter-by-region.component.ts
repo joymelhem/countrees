@@ -19,7 +19,6 @@ export class FilterByRegionComponent {
   @Output() filterByContinent: EventEmitter<string[]> = new EventEmitter<string[]>();
 
   toggleFilter(): void {
-    console.log('Hi');
     this.showFilter = !this.showFilter;
   }
 

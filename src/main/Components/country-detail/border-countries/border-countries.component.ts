@@ -11,11 +11,9 @@ import { country } from 'src/app/country';
 export class BorderCountriesComponent {
   @Input() borderCountries: country[] = [];
 
-  constructor(private router: Router, private location: Location) {}
+  constructor(private router: Router) {}
 
   navigateToCountryDetails(countryName: string): void {
-    this.router.navigate(['/main/country', countryName]).then(() => {
-      this.location.go(this.router.url);
-    });
+    this.router.navigate(['/main/country', countryName]);
   }
 }
